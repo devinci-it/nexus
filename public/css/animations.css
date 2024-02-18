@@ -1,0 +1,106 @@
+:root {
+    /* Global CSS variables */
+    --slide-in-duration: 1s;            /* Duration for slide-in animations */
+    --fade-in-duration: 1s;             /* Duration for fade-in animations */
+    --dark-fade-in-duration: 2s;        /* Duration for fade-in from dark animations */
+}
+
+/* Keyframes for slide-in from the top */
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-in from the right */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-in from the bottom */
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-in from the left */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for simple fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for fade-in from dark */
+@keyframes fadeInFromDark {
+    0% {
+        opacity: 0;
+        background-color: #000;  /* Dark background color */
+    }
+    100% {
+        opacity: 1;
+        background-color: transparent;  /* Fade to transparent background */
+    }
+}
+
+/* Class to apply slide-in from the top animation */
+.slide-in-top {
+    animation: slideInTop var(--slide-in-duration) ease-in-out;
+}
+
+/* Class to apply slide-in from the right animation */
+.slide-in-right {
+    animation: slideInRight var(--slide-in-duration) ease-in-out;
+}
+
+/* Class to apply slide-in from the bottom animation */
+.slide-in-bottom {
+    animation: slideInBottom var(--slide-in-duration) ease-in-out;
+}
+
+/* Class to apply slide-in from the left animation */
+.slide-in-left {
+    animation: slideInLeft var(--slide-in-duration) ease-in-out;
+}
+
+/* Class to apply simple fade-in animation */
+.fade-in {
+    animation: fadeIn var(--fade-in-duration) ease-in-out;
+}
+
+/* Class to apply fade-in from dark animation */
+.fade-in-from-dark {
+    animation: fadeInFromDark var(--dark-fade-in-duration) ease-in-out;
+}
