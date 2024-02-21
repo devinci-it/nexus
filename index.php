@@ -19,6 +19,11 @@ session_start();
 require_once "vendor/autoloader.php";
 
 use Frontend\Directory;
+use Frontend\InputButton\InputButton;
+use Frontend\InputButton\InputButtonBuilder;
+use Frontend\InputIcon\InputIcon;
+use Frontend\InputIcon\InputIconBuilder;
+
 use Models\Database;
 use Models\User;
 use Models\AuthUser;

@@ -598,7 +598,7 @@ right:0;}
 }
 
 /* Adjust the first grid item to have a maximum width of 250px */
-.grid-2r > *:first-child {
+.grid-2r > *:nth-child(2) {
     max-width: 250px;
 }
 
@@ -710,4 +710,9 @@ div#home {
     align-content: stretch;
     flex-direction: row;
     align-items: stretch;
+}
+
+
+.container.grid.grid-2r > :first-child {
+    grid-column: span 2; /* This will make the first direct child span two columns */
 }

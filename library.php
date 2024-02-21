@@ -37,10 +37,31 @@ $_SESSION['home_path'] = "includes/MEDIA/{$_SESSION['home_dir']}";
 
 include_once "template/header.php";
 ?>
+<style>
+    .container.grid.grid-2r {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
 
+    .container.grid.grid-2r > :first-child {
+        grid-column: span 2;
+    }
+    .header-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column-start: 2;
+    }
+    aside{
+        grid-row-start: 0;
+    }
+</style>
 <body>
 <container class="grid grid-2r">
     <?php
+    include_once "template/nav.php";
+
     $page = $_GET['page'] ?? '';
     if ($page==''){
             $_GET['page'] = 'home';
