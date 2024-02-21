@@ -2,6 +2,12 @@
 use Frontend\InputIcon\InputIcon;
 use Frontend\InputIcon\InputIconBuilder;
 ?>
+
+<style>
+    footer.footer-section>.container{
+        justify-items: center;
+    }
+</style>
 <main class="main-content" id="login-content">
     <div class="container">
         <div class="container login-container">

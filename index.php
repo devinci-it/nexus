@@ -50,7 +50,7 @@ switch ($page) {
 
     case 'logout':
         session_destroy();
-        header("Location: ?page=login&logout=success");
+        header("Location: logout.php");
         exit(); // Terminate script execution after redirection
         break;
 
