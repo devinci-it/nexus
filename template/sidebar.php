@@ -17,7 +17,7 @@ $pngFilePath = $homePath . "/user_icon.png";
 $photo = file_exists($pngFilePath) ? $pngFilePath : $homePath . "/user_icon.svg";
 
 ?>
-<aside class="side-nav">
+<aside class="side-nav sidebar">
     <div class="logo-wrapper">
         <svg width="48" height="28" viewBox="0 0 48 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24.9227 27.7647H18.1364L6.78627 10.6392L6.78627 27.7647H0V0H6.78627L18.1364 17.2046V1.24701e-06L24.9227 0V27.7647Z" fill="#E1AF00"/>

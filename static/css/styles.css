@@ -160,8 +160,11 @@ a.nexus-header-link {
 
 @media (max-width: 48em) {
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        display: flex;
+        align-content: center;
+        width: 100%;
+        flex: 1;
     }
 
     .nexus-footer-item {
@@ -570,9 +573,17 @@ right:0;}
 
 .directory-grid {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 20px;
+    align-content: center;
+    max-height: 100%;
+    flex-direction: row;
+    overflow-y: scroll;
+    align-items: flex-end;
+    /* flex: 1; */
+    min-height: 300px;
+    width: 100%;
 }
 
 
@@ -597,10 +608,7 @@ right:0;}
     gap: 20px;
 }
 
-/* Adjust the first grid item to have a maximum width of 250px */
-.grid-2r > *:nth-child(2) {
-    max-width: 250px;
-}
+
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
@@ -712,7 +720,3 @@ div#home {
     align-items: stretch;
 }
 
-
-.container.grid.grid-2r > :first-child {
-    grid-column: span 2; /* This will make the first direct child span two columns */
-}

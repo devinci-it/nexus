@@ -1,24 +1,5 @@
-
-<main>
-
-    <div class="container"id="home">
-            <!-- Display Photo -->
-<!--            <div style="border-bottom: 1px solid #ccc; padding-bottom: 10px;">-->
-<!--                <label for="displayPhoto" style="cursor: pointer;">-->
-<!--                    <img id="displayPhotoPreview" src="../../public/assets/icons/default.svg" alt="Default Photo"-->
-<!--                         style="max-width: 50px; max-height: 50px;">-->
-<!--                </label>-->
-<!--                <input type="file" id="displayPhoto" name="displayPhoto" accept="image/*"-->
-<!--                       onchange="previewDisplayPhoto(this)" style="display: none;">-->
-<!--                <h1 class="title-small-text">--><?php //echo $_SESSION["username"]; ?><!--</h1>-->
-<!---->
-<!--            </div>-->
-<!---->
-<!--            <p class="caption-text">User ID: --><?php //echo $_SESSION["user_id"]; ?><!--</p>-->
-<!---->
-<!--            <a class="btn" href="../../index.php?action=signin">Save</a>-->
-
-<img src="public/assets/oobe.svg">
+<div class="oobe-wrapper">
+    <img src="public/assets/oobe.svg">
 
             <div class="text-wrapper">
 
@@ -46,11 +27,7 @@
                 }
 
                 include_once "template/features.php";?>
-
             </div>
-
-</main>
-
 
 
 

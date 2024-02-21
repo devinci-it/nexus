@@ -1,15 +1,18 @@
 
 
-.file-item {
-        transition: all ease 300ms;
-        border-radius: 5px;
-        padding: 10px;
-    border: solid 1px vaR(--border-color);
-        aspect-ratio: 1; /* Aspect ratio 1:1 */
-        min-width: 150px; /* Adjust min-width as needed */
-    }
+.file-item{
+    display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 5px;
+    width:150px;
+    aspect-ratio: 1;
+    border: solid 1px var(--border-color);
+transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
 
     .file-item:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background-color: var(--alert-bg-color);
         border:solid 2px rgb(253, 224, 170);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -177,7 +180,7 @@ th:last-of-type {
     background-color: #f3f4f6;
 }
 .file-grid {
-    flex-grow: 1; /* Make .file-grid occupy remaining space */
+    flex-grow: 1; /* Make .file-grid occupy remjaining space */
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
@@ -187,6 +190,7 @@ th:last-of-type {
     flex-direction: row;
     align-items: stretch;
     overflow-y: scroll;
+    max-height: 100%;
 }
 
 
@@ -196,14 +200,18 @@ th:last-of-type {
 .action-menu {
     display: flex;
     opacity: 55%;
-    justify-content: space-between;
     transition: all 500ms ease;
-    border-radius: 5px; /* This sets the overall border radius */
-    overflow: hidden; /* This will hide the corners where border-radius won't apply */
+    border-radius: 5px;
+    overflow: hidden;
+    /* position: absolute; */
+    bottom: 0;
+    margin: 0 auto;
+    align-content: space-around;
+    min-height: 30px;
 }
 
 .action-menu > * {
-    flex: 1;
+    /*flex: 1;*/
     gap: 10px;
 
 }
@@ -299,7 +307,7 @@ aside.icon-sidebar a span {
 
 aside.icon-sidebar a:hover span {
     display: block; /* Show label on hover */
-    font-size: 10x; /* Font size of label */
+    font-size: 10px; /* Font size of label */
     margin-top: 5px; /* Margin top for spacing */
 }
 

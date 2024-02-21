@@ -26,6 +26,13 @@ foreach ($requiredSessionVariables as $variable) {
     }
 }
 
+function includeTopNav()
+{
+    include "template/nav.php";
+}
+
+
+
 $loggedInUser = new AuthUser(
     $_SESSION['user_info'],
     $_SESSION['user_id']
@@ -35,18 +42,41 @@ $fileRenderer=new FileRenderer($mediaManager->getAllFiles());
 $_SESSION['home_dir'] = str_pad($_SESSION['user_id'], 5, '0', STR_PAD_LEFT) . "_" . strtoupper($_SESSION['username']);
 $_SESSION['home_path'] = "includes/MEDIA/{$_SESSION['home_dir']}";
 
+
 include_once "template/header.php";
 ?>
 <style>
     .container.grid.grid-2r {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: minmax(200px, auto) 1fr;
         grid-gap: 10px;
+        padding: 0;
+        margin: 0;
     }
 
-    .container.grid.grid-2r > :first-child {
-        grid-column: span 2;
+    main#library-main{
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
     }
+    main#library-main .sidebar{
+        grid-area: 1 / 1 / 2 / 2; /* Start at row 1, column 1 and end at row 2, column 2 */
+    }
+
+    .content-wrapper{
+        position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            margin: 30px auto;
+            width: 100%;
+        height: 100%;
+        overflow: scroll;
+            padding: 30px;
+
+    }
+
     .header-section {
         display: flex;
         justify-content: center;
@@ -56,11 +86,23 @@ include_once "template/header.php";
     aside{
         grid-row-start: 0;
     }
+
+    .file-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%; /* Adjust as needed */
+    }
 </style>
 <body>
-<container class="grid grid-2r">
+
+
+<main id="library-main">
+
+<div class="container grid grid-2r">
+
     <?php
-    include_once "template/nav.php";
+    include_once "template/sidebar.php";
 
     $page = $_GET['page'] ?? '';
     if ($page==''){
@@ -70,7 +112,9 @@ include_once "template/header.php";
 
     include_once "template/sidebar.php"
     ?>
-    <main>
+
+    <div class="content-wrapper">
+
         <?php
 
 //        include_once "template/nav.php";
@@ -92,21 +136,25 @@ include_once "template/header.php";
                     break;
 
                 case 'images':
+//                    includeTopNav();
                     displayHeader('Images');
                     displayMedia($mediaManager->getPhotoArray());
                     break;
 
                 case 'videos':
+//                    includeTopNav();
                     displayHeader('Videos');
                     displayMedia($mediaManager->getVideoArray());
                     break;
 
                 case 'audios':
+//                    includeTopNav();
                     displayHeader('Audios');
                     displayMedia($mediaManager->getAudioArray());
                     break;
 
                 case 'recents':
+//                    includeTopNav();
                     displayHeader('Recents');
                     displayMedia($mediaManager->getRecentFileArray());
                     break;
@@ -155,7 +203,9 @@ include_once "template/menu.php";
 
 //        print_r($mediaManager->getAllFiles());
         ?>
-    </main>
-</container>
+    </div>
+</div>
+</main>
+
 </body>
 

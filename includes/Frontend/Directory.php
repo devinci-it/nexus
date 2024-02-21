@@ -12,15 +12,19 @@ class Directory
     public function render()
     {
         $html = '<div class="directory-grid">';
-
+        $appendTrash='';
         foreach ($this->directories as $directory) {
-            if (empty($directory['parent_directory_id'])) {
+            if (empty($directory['parent_directory_id'])||$directory['directory_name']==='Favorites') {
+                continue;
+            }
+            if ($directory['directory_name']==='Trash'){
+                $appendTrash .= $this->renderDirectory($directory);
                 continue;
             }
             $html .= $this->renderDirectory($directory);
         }
 
-        $html .= '</div>';
+        $html .= $appendTrash.'</div>';
 
         return $html;
     }
